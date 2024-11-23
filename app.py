@@ -30,4 +30,4 @@ def echo():
     return jsonify({"message": f"echo: {message}"})
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=PORT)
+    app.run(debug=True)
