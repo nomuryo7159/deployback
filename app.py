@@ -31,4 +31,5 @@ def echo():
     return jsonify({"message": f"echo: {message}"})
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=PORT)
+    port = int(os.getenv('PORT', 8000))
+    app.run(host='0.0.0.0', port=port)
