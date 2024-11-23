@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "http://tech0-gen-8-step3-testapp-node1-15.azurewebsites.net"}})  # CORS設定を更新
@@ -30,4 +31,5 @@ def echo():
     return jsonify({"message": f"echo: {message}"})
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', 
+    port=int(os.environ.get('PORT', 8080)))
